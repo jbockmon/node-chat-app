@@ -6,7 +6,7 @@
    <title>Node Chat App</title>
    <meta name="viewport" content="width=device-width, initial-scale=1">
    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
-   <script src="main.js"></script>
+   
 </head>
 <body>
    <header>
@@ -16,16 +16,6 @@
    </header>
 
    <script src="/socket.io/socket.io.js"></script>
-   <script>
-      var socket = io();
-
-      socket.on('connect', () => {
-         console.log('Connected to server');
-      });
-
-      socket.on('disconnect', () => {
-         console.log('Server connection dropped');
-      });
-   </script>
+   <script src="js/index.js"></script>
 </body>
 </html>
