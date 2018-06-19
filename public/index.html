@@ -11,11 +11,23 @@
 <body>
    <header>
       <h1>
-            Node Chat App
+         Node Chat App
       </h1>
    </header>
 
+   <ol id="messages">
+
+   </ol>
+
+   <form id="message-form">
+      <input name="message" type="text" placeholder="Message"/>
+      <button>
+         Send
+      </button>
+   </form>
+
    <script src="/socket.io/socket.io.js"></script>
+   <script src="./js/libs/jquery.min.js"></script>
    <script src="js/index.js"></script>
 </body>
 </html>
