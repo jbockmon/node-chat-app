@@ -27,11 +27,9 @@ io.on('connection', (socket) => {
    });
 
    socket.on('disconnect', () => {
-      console.log('User Disconnected');
+
    });   
 });
-
-
 
 server.listen(3000, () => {
    console.log('Server started on port 3000');

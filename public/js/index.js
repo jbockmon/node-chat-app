@@ -9,18 +9,19 @@ var socket = io();
    });
 
    socket.on('newMessage', function(message) {
-      console.log(message);
+      var formattedTime = moment(message.createdAt).format('h:mm:ss a');
       var li = $('<li></li>');
       
-      li.text(`${message.from}: ${message.text}`);
+      li.text(`${message.from} ${formattedTime}: ${message.text}`);
       $('#messages').append(li);
    });
 
    socket.on('newLocationMessage', function(message) {
+      var formattedTime = moment(message.createdAt).format('h:mm:ss a');
       var li = $('<li></li>');
       var a = $('<a target="_blank"> My current location </a>');
 
-      li.text(`${message.from}: `);
+      li.text(`${message.from} ${formattedTime}: `);
       a.attr('href', message.url);
       li.append(a);
 
@@ -55,9 +56,8 @@ var socket = io();
          });
          locationButton.removeAttr('disabled').text('Send location');
       }, function() {
-         alert('Unable to fetch location');
-         locationButton.removeAttr('disabled').text('Send location');
+            alert('Unable to fetch location');
+            locationButton.removeAttr('disabled').text('Send location');
       }
-        
    )
    });
