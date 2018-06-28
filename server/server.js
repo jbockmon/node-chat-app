@@ -3,6 +3,7 @@ const http = require('http');
 const express = require('express');
 const socketIO = require('socket.io');
 
+const port = process.env.PORT || 3000;
 const {generateMessage, generateLocationMessage} = require('./utils/message');
 const {isRealString} = require('./utils/validation');
 const {Users} = require('./utils/users');
@@ -63,8 +64,8 @@ io.on('connection', (socket) => {
    });   
 });
 
-server.listen(3000, () => {
-   console.log('Server started on port 3000');
+server.listen(port, () => {
+   console.log(`Server started on port ${port}`);
 });
 
 
