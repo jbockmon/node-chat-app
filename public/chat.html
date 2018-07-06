@@ -1,49 +1,51 @@
 <!DOCTYPE html>
-<html>
+<html class = "h-100">
 <head>
    <meta charset="utf-8" />
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <title>Node Chat App</title>
    <meta name="viewport" content="width=device-width, initial-scale=1">
-   <link rel="stylesheet" type="text/css" media="screen" href="css/styles.css" />
+   <link rel="stylesheet" type="text/css" media="screen" href="./css/bootstrap.min.css" />
+   <link rel="stylesheet" type="text/css" media="screen" href="./css/style.css" />
    
 </head>
-<body class="chat">
-   <div class="chat__sidebar">
-      <h3>People</h3>
-      <div id="users">
+<body class="d-flex row mx-0">
 
-      </div>
-   </div>
+    <div class="chat__sidebar bg-primary col-md-2 col-sm-3 d-none d-sm-block d-md-block d-lg-block d-xl-block">
+        <h3 class="text-center text-light font-weight-bold">People</h3>
+        <div class="text-light" id="users">
 
-   <div class="chat__main">
-      <ol id="messages" class="chat__messages">
+        </div>
+    </div>
 
-      </ol>
+    <div class="h-100 col-md-10 col-sm-9 col-xs-12 d-flex flex-column chat__container">
+       
+            <ol id="messages" class="chat__messages list-unstyled flex-grow-1 chat__pane">
 
-      <div class="chat__footer">
-         <form id="message-form">
-               <input name="message" type="text" placeholder="Message" autofocus autocomplete="off"/>
-               <button>
-                  Send
-               </button>
+            </ol>
+       
+      
+        <div class="my-3 chat_footer">
+            <form id="message-form">
+                <div class="input-group">
+                    <input class="form-control" name="message" type="text" placeholder="Message" autofocus autocomplete="off"/>
+                    <button class="btn btn-secondary mx-2">Send</button>
+                    <button class="btn btn-secondary" id="send-location">
+                        Send location
+                    </button>
+                </div>
+                
             </form>
          
-            <button id="send-location">
-               Send location
-            </button>
-         
-
-      </div>
-      
-      
-   </div>
+            
+        </div>
+    </div>
 
    <script id="message-template" type="text/template">
       <li class="message">
          <div class="message__title">
-            <h4>{{from}}</h4>
-            <span>{{createdAt}}</span>
+            <span class="font-weight-bold mx-1">{{from}}</span>
+            <span class="text-muted">{{createdAt}}</span>
          </div>
          <div class="message__body">
             <p>{{text}}</p>
@@ -54,7 +56,7 @@
    <script id="location-message-template" type="text/template">
       <li class="message">
          <div class="message__title">
-            <h4>{{from}}</h4>
+            <h6>{{from}}</h6>
             <span>{{createdAt}}</span>
          </div>
          <div class="message__body">

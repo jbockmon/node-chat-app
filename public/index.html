@@ -1,31 +1,37 @@
 <!DOCTYPE html>
-<html>
+<html class="h-100">
 <head>
    <meta charset="utf-8" />
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <title>Node Chat App</title>
    <meta name="viewport" content="width=device-width, initial-scale=1">
-   <link rel="stylesheet" type="text/css" media="screen" href="css/styles.css" />
-   <script src="./js/index.js"></script>
+   <link rel="stylesheet" type="text/css" media="screen" href="./css/bootstrap.min.css" />
 </head>
-   <body class="centered-form">
-      <div class="centered-form__form">
-         <form action="/chat.html">
-            <div class="form-field">
-               <h3>Join a Chat</h3>
+   <body class="bg-primary container-fluid d-flex align-items-center h-100"></body>
+      <div class="card bg-light mx-auto " style="width: 300px;" >
+        <div class="card-body">
+          <h3 class="card-title text-center">Join A Chat</h5>
+          <div class="card-text">
+              <form action="/chat.html">
+                <div class="form-group">
+                    <label>Display name</label>
+                    <input type="text" name="name" class="form-control" autofocus/>
+                </div>
+                
+                <div class="form-group">
+                    <label>Room name</label>
+                    <input type="text" name="room" class="form-control" value="general"/>
+                </div>
+                    
+                <button class="btn btn-primary btn-block">Join</button>
+              </form>
             </div>
-            <div class="form-field">
-               <label>Display name</label>
-               <input type="text" name="name" autofocus/>
-            </div>
-            <div class="form-field">
-               <label>Room name</label>
-               <input type="text" name="room"/>
-            </div>
-            <div class="form-field">
-               <button>Join</button>
-            </div>
-         </form>
+          </div>
       </div>
    </body>
+
+   <script src="./js/libs/jquery.min.js"></script>
+   <script src="./js/libs/popper.min.js"></script>
+   <script src="./js/libs/bootstrap.min.js"></script>
+   <script src="./js/index.js"></script>
 </html>

@@ -1,6 +1,7 @@
 var socket = io();
 
 function scrollToBottom() {
+   var chatContainer = $('.chat__container');
    var messages = $('#messages');
    var newMessage = messages.children('li:last-child');
 
@@ -9,6 +10,12 @@ function scrollToBottom() {
    var scrollHeight = messages.prop('scrollHeight');
    var newMessageHeight = newMessage.innerHeight();
    var lastMessageHeight = newMessage.prev().innerHeight();
+
+   console.log(`clientHeight: ${clientHeight} `);
+   console.log(`scrollTop: ${scrollTop} `);
+   console.log(`scrollHeight: ${scrollHeight} `);
+   console.log(`newMessageHeight: ${newMessageHeight} `);
+   console.log(`lastMessageHeight: ${lastMessageHeight} `);
 
    if (clientHeight + scrollTop + newMessageHeight + lastMessageHeight >= scrollHeight) {
       messages.scrollTop(scrollHeight);
@@ -47,7 +54,7 @@ function scrollToBottom() {
    });
 
    socket.on('updateUserList', function (users) {
-      var ol = $('<ol></ol>');
+      var ol = $('<ol class="list-unstyled"></ol>');
 
       users.forEach(function (user) {
          ol.append($('<li></li>').text(user));
